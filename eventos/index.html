@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        td{
+            height: 3px;
+            width: 3px;
+        }
+    </style>
+</head>
+<body onload="crear_tabla()">
+    <h1>Pixel Canvas</h1>
+    <li style="color:red">Ctrl: Pinta Rojo</li><li style="color:blue">Alt: Pinta Azul</li><li>Shift: Borrar</li><input type="button" value="Borrar todo" id="boton" onclick="borrar()">
+    <div id="caja">
+            <table id="tabla" style="border: 2px solid black;"></table>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

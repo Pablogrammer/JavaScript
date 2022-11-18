@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form" id="crear">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" class="submit" value="Enviar" onclick="crearCookie('nombre', document.getElementById('nombre').value)">
+    </div>
+
+    <p id="bienvenida"></p>
+
+    <div class="form" id="borrar">
+        <input type="submit" class="submit" value="Cerrar Sesión" onclick="borrarCookies()">
+    </div>
+
+    <div class="form" id="ajustes">
+        <label for="fondo">Color de fondo:</label>
+        <input type="color" name="fondo" id="fondo" value="#d3d3d3">
+        <input type="submit" class="submit" value="Cambiar" onclick="cambiarFondo('fondo', document.getElementById('fondo').value)">
+
+        <br><br>
+        
+        <label for="parrafo">Color de parrafo:</label>
+        <input type="color" name="parrafo" id="parrafo" value="#d3d3d3">
+        <input type="submit" class="submit" value="Cambiar" onclick="cambiarParrafo('parrafo', document.getElementById('parrafo').value)">
+    </div>
+    
+    <footer>
+        <hr>
+        <div class="autor">
+            <div class="copy">
+                <span>&copy; Pablo Cid Olmos</span>
+            </div>
+            <div class="github">
+                <a href="https://github.com/Pablogrammer">
+                    <img src="https://www.shareicon.net/data/256x256/2015/08/10/82884_github_4096x4096.png" alt="logo_github" class="logo">
+                    <span id="name">Pablogrammer</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Cronometro</title>
+</head>
+<body>
+    <div id="caja">
+        <fieldset>
+            <h3>1. Realiza un cronómetro que empiece cuando hagas clic en un botón, tenga otro botón para pausa/seguir y otro para reiniciarlo a cero.</h3>
+            <button onclick="crono()">Start</button>
+            <button onclick="parar()">Pause</button>
+            <button onclick="reiniciar()">Restart</button>
+            <p id="result_crono"></p>
+        </fieldset>
+    </div>
+    <div id="caja">
+        <fieldset>
+            <h3>2. Añade una cuenta atrás donde al usuario se le pida el número de minutos y segundos.</h3>
+            <label for="tiempo">Min:<input type="number" name="min" id="min"></label><br>
+            <label for="tiempo">Sec: <input type="number" name="sec" id="sec"></label><br>
+            <button onclick="filtro_cuenta()">Count Back</button>
+            <p id="result_cuenta"></p>
+        </fieldset>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+
+body{
+    background: rgb(63,236,86);
+    background: radial-gradient(circle, rgba(63,236,86,1) 1%, rgba(148,233,158,1) 100%);
+}
+
+
+#caja{
+    display: flex;
+    justify-content: center;
+
+}
+
+fieldset{
+    align-items: center;
+    float: left;
+    width: 50%;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #81fb91;
+}
+
+p{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}

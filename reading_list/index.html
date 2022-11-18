@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imagenes/images.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Librería</title>
+</head>
+<body>
+    <h1>Librería</h1>
+        <div class="caja">
+            <fieldset>
+                <h2>Añadir libro</h2>
+                <label for="title">Título: </label><input type="text" name="title" id="title"><br>
+                <label for="title">Género: </label><input type="text" name="genre" id="genre"><br>
+                <label for="title">Autor: </label><input type="text" name="author" id="author"><br>
+                <button type="submit" onclick="add_book()">Añadir</button><button type="submit" onclick="libreria.finish_current_book()">Terminar libro</button>
+                <p id="errores" style="color:red"></p>
+
+            </fieldset>
+        </div>
+        <div class="caja">
+            <img src="./imagenes/estante.jpg" alt="Image not found">
+            <div id="tabla">
+
+            </div>
+        </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

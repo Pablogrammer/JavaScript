@@ -1,0 +1,26 @@
+body{
+    background: rgb(96,235,218);
+    background: linear-gradient(180deg, rgba(96,235,218,1) 0%, rgba(114,156,237,1) 100%);
+}
+
+.caja{
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+fieldset{
+    align-items: center;
+    float: center;
+    width: 20%;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #7eb3f0;
+}
+
+#tabla{
+    background-color: beige;
+    position:absolute;
+    top: 20%;
+}
