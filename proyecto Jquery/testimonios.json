@@ -1,0 +1,43 @@
+[
+    {
+        "nombre" : "James Mcgill",
+        "fecha" : "12/09/2002",
+        "texto" : "Afirma haber visto cómo su hermano cometía fraude ante un tribunal de justicia"
+    },
+
+    {
+        "nombre" : "Rick Sánchez",
+        "fecha" : "25/12/1999",
+        "texto" : "Es testigo de haber visto a su hija y esposa morir a manos de un desconocido"
+    },
+
+    {
+        "nombre" : "Morty Smith",
+        "fecha" : "6/10/2015",
+        "texto" : "No ha visto nada, ha venido sin saber qué testificar"
+    },
+
+    {
+        "nombre" : "James Cameron",
+        "fecha" : "16/02/2019",
+        "texto" : "Sabe algo sobre el caso Random pero no quiere decir el que"
+    },
+
+    {
+        "nombre" : "Jose Luis",
+        "fecha" : "1/01/2022",
+        "texto" : "Ha sido complice de un asesinato"
+    },
+
+    {
+        "nombre" : "???????",
+        "fecha" : "?/??/????",
+        "texto" : "Quién es este tio, alguien lo sabe?"
+    },
+
+    {
+        "nombre" : "Susana Horia",
+        "fecha" : "5/03/2020",
+        "texto" : "Su sanahoria jaja xd"
+    }
+]

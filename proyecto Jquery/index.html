@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Project</title>
+</head>
+<body>
+    <style>
+
+body {
+  background: radial-gradient( #6dedc7, #2193b0);
+}
+
+    </style>
+
+    <fieldset>
+        <legend id="ej1" style="font-size: 30px; font-weight: 800;">Validación de formulario con JQUERY</legend>
+            
+            <form>
+                <label for="nombre" class="nombre">Nombre: </label><input type="text" name="nombre" id="nombre" class="nombre"><br>
+                <label for="tlf" class="tlf" disabled>Teléfono: </label><input type="number" name="tlf" id="tlf" class="tlf" disabled><br>
+                <label for="dni" class="dni" disabled>DNI: </label><input type="text" name="dni" id="dni" class="dni" disabled><br>
+                <label for="texto" class="texto" disabled>Texto: </label><textarea name="texto" id="texto" class="texto" cols="30" rows="10" disabled></textarea><br>
+                <label for="fecha" class="fecha" disabled>Fecha: </label><input type="date" name="fecha" id="fecha" class="fecha" disabled><br>
+                <button type="submit" disabled id="enviar">- Enviar -</button>
+            </form>
+    </fieldset><br>
+
+    <fieldset>
+        <legend id="ej2" style="font-size: 30px; font-weight: 800;"> Archivo "Productos.json" mediante Jquery</legend>
+        <div id="productos"></div>
+    </fieldset> <br>
+
+    <fieldset>
+        <legend id="ej3" style="font-size: 30px; font-weight: 800;">Testimonios Json</legend>
+        <div id="testimonios"></div>
+    </fieldset><br>
+
+    <fieldset>
+        <legend id="ej4" style="font-size: 30px; font-weight: 800;">Testimonios aleatorios Json</legend>
+        <div id="testimonios_rand"></div>
+    </fieldset><br>
+
+    <fieldset>
+        <legend id="ej5" style="font-size: 30px; font-weight: 800;">Vista tabla</legend>
+        <div id="testimonios_rand_vistas"></div>
+        <input type="checkbox" name="vista_tabla" id="vista_tabla" checked = false>
+    </fieldset><br>
+
+    <fieldset>
+        <legend id="ej7" style="font-size: 30px; font-weight: 800;"> Boton scroll </legend>
+        <h2 style="display: flex; justify-content: center;">----------Implementado----------</h2>
+        <button id="top-btn">&uarr;</button>
+        <style>#top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+          }</style>
+    </fieldset>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
