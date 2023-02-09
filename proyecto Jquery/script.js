@@ -159,26 +159,26 @@ $(document).ready(function(){
                                         //       Ejercicio 3      //
                                         //------------------------//
 
-$(document).ready(function(){
-    $.ajax({
-        url: "testimonios.json",
-        type: "GET",
-        dataType: "json",
-        error: $('#testimonios').html('Error al leer el archivo Json'),  // Manejamiento de error al leer archivo
-        success: function(data){
-        var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
-        $.each(data, function(key, value){
-            testimonio += '<div class="testimonio" style="display:flex;align-items:center; flex-direction:column; margin:10px">';
-            testimonio += '<h2>'+value.nombre+'</h2>';
-            testimonio += '<p>'+value.fecha+'</p>';
-            testimonio += '<p>'+value.texto+'</p>';
-            testimonio += '</div>';
-        });
-        testimonio += '</div>';
-        $('#testimonios').html(testimonio);
-        }
-    });
-});
+// $(document).ready(function(){
+//     $.ajax({
+//         url: "testimonios.json",
+//         type: "GET",
+//         dataType: "json",
+//         error: $('#testimonios').html('Error al leer el archivo Json'),  // Manejamiento de error al leer archivo
+//         success: function(data){
+//         var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
+//         $.each(data, function(key, value){
+//             testimonio += '<div class="testimonio" style="display:flex;align-items:center; flex-direction:column; margin:10px">';
+//             testimonio += '<h2>'+value.nombre+'</h2>';
+//             testimonio += '<p>'+value.fecha+'</p>';
+//             testimonio += '<p>'+value.texto+'</p>';
+//             testimonio += '</div>';
+//         });
+//         testimonio += '</div>';
+//         $('#testimonios').html(testimonio);
+//         }
+//     });
+// });
 
 
                                         //------------------------//
@@ -227,91 +227,65 @@ $(document).ready(function(){
                                         //------------------------//
                                         //       Ejercicio 5      //
                                         //------------------------//
+var datos;
 
-var vista_tabla = $("#vista_tabla").prop('checked');
+function intervalo(){
+$.getJSON("testimonios.json", function(data) {
+    // selecciona tres elementos aleatorios
+    var selectedData = [];
+    for (var i = 0; i < 3; i++) {
+        var randomIndex = Math.floor(Math.random() * data.length);
+        selectedData.push(data[randomIndex]);
+        data.splice(randomIndex, 1);
+    }
 
-if($("#vista_tabla").change(function(){
+    // muestra los tres elementos seleccionados como divs
+    showTable(selectedData);
 
+    });
+}
+    function showTable(data) {
+    datos = data;
+
+    var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
+    testimonio += '<table class="testimonio_tabla"> <style>table{border: 1px black solid} th{border: 1px black solid} td{border: 1px black solid} tr{border: 1px black solid}</style>';
+    testimonio += '<tr><th>Nombre</th><th>Fecha</th><th>Testimonio</th></tr>';
     
-    $(document).ready(function(){
-        $.ajax({
-            url: "testimonios.json",
-            type: "GET",
-            dataType: "json",
+    $.each(datos, function(key, value) {
+        testimonio += '<tr>';
+        testimonio += '<td>' + value.nombre + '</td>';
+        testimonio += '<td>' + value.fecha + '</td>';
+        testimonio += '<td>' + value.texto + '</td>';
+        testimonio += '<tr>';
+    });
     
-            
-            success: function(data) {
+    testimonio += '</table>';
+    $("#output").html(testimonio);
+    }
     
-                var indices = [];
-                var testimonio = '';
-                while (indices.length < 3) {
-                var index = Math.floor(Math.random() * data.length);
-                if (!indices.includes(index)) {
-                    indices.push(index);
-                }
+    function showDivs(datos) {
+    var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
+    $.each(datos, function(key, value) {
+        testimonio += '<div class="testimonio" style="display:flex;align-items:center; flex-direction:column; margin:10px">';
+        testimonio += '<h2>'+value.nombre+'</h2>';
+        testimonio += '<p>'+value.fecha+'</p>';
+        testimonio += '<p>'+value.texto+'</p>';
+        testimonio += '</div>';
+    });
+    testimonio += '</div>';
+    $("#output").html(testimonio);
+    }
 
-                var randomTestimonios = [];
-                var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
-                
-                }
-
-                if(vista_tabla){
-                    console.log(vista_tabla);
-
-                    testimonio += '<table class="testimonio_tabla"> <style>table{border: 1px black solid} th{border: 1px black solid} td{border: 1px black solid} tr{border: 1px black solid}</style>';
-                    testimonio += '<tr><th>Nombre</th><th>Fecha</th><th>Testimonio</th></tr>';
-
-                    for (var i = 0; i < indices.length; i++) {
-                        randomTestimonios.push(data[indices[i]]);
-
-                        
-                        
-                        testimonio += '<tr>';
-                        testimonio += '<td>' + randomTestimonios[i]['nombre'] + '</td>';
-                        testimonio += '<td>' + randomTestimonios[i]['fecha']+'</td>';
-                        testimonio += '<td>' + randomTestimonios[i]['texto']+'</td>';
-                        testimonio += '<tr>';
-                        
-                    }
-                    testimonio += '</table>';
-                    $("#testimonios_rand_vistas").html(testimonio);
-                    
-                }
-                else{
-                    // Obtén una lista de índices aleatorios para los testimonios
-                
-                    console.log(vista_tabla);
-                
+    $("#btn-table").click(function() {
+    showTable(datos);
+    });
     
-                
-                for (var i = 0; i < indices.length; i++) {
-                randomTestimonios.push(data[indices[i]]);
-                testimonio += '<div class="testimonio" style="display:flex;align-items:center; max-width:30%; flex-direction:column; margin:10px">';
-                testimonio += '<h2>' + randomTestimonios[i]['nombre'] + '</h2>';
-                testimonio += '<p>'+randomTestimonios[i]['fecha']+'</p>';
-                testimonio += '<p>'+randomTestimonios[i]['texto']+'</p>';
-                testimonio += '</div>';
-    
-                }
-                
-                testimonio += '</div>'
-                $("#testimonios_rand_vistas").html(testimonio);
-                }
-    
-    
-                
-            },
-            error: function(error) {
-                console.log(error);
-            }
-            });
-            
+    $("#btn-divs").click(function() {
+    showDivs(datos);
     });
 
-
-}));
-console.log(vista_tabla);
-
+    intervalo();
+    setInterval(intervalo, 10000);
 
 
                                         //------------------------//
