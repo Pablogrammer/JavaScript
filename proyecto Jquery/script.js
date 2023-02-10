@@ -157,8 +157,10 @@ $(document).ready(function(){
 
 
                                         //------------------------//
-                                        // Ejercicios 3,4,5,6,9   //  TODO en el 9 hacer la animación
+                                        // Ejercicios 3,4,5,6,9   //  
                                         //------------------------//
+
+                                    //TODO en el 9 hacer la animación
 
 var datos;
 
@@ -211,7 +213,7 @@ function showDivs(datos) {
         testimonio += '</div>';
     });
 
-testimonio += '</div>';
+    testimonio += '</div>';
     $("#output").html(testimonio);
 }
 
@@ -226,8 +228,6 @@ $("#btn-divs").click(function() {
 intervalo();
 setInterval(intervalo, 10000);
 
-    
-
 
                                         //------------------------//
                                         //       Ejercicio 7      //
@@ -235,7 +235,7 @@ setInterval(intervalo, 10000);
 
 $(document).ready(function(){
     $("#top-btn").click(function(){
-        $("html, body").animate({scrollTop: 0}, "slow");
+        $("html, body").animate({scrollTop: 0}, 1000);
         return false;
     });
 });
