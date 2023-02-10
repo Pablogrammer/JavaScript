@@ -155,83 +155,17 @@ $(document).ready(function(){
 });
 
 
-                                        //------------------------//
-                                        //       Ejercicio 3      //
-                                        //------------------------//
-
-// $(document).ready(function(){
-//     $.ajax({
-//         url: "testimonios.json",
-//         type: "GET",
-//         dataType: "json",
-//         error: $('#testimonios').html('Error al leer el archivo Json'),  // Manejamiento de error al leer archivo
-//         success: function(data){
-//         var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
-//         $.each(data, function(key, value){
-//             testimonio += '<div class="testimonio" style="display:flex;align-items:center; flex-direction:column; margin:10px">';
-//             testimonio += '<h2>'+value.nombre+'</h2>';
-//             testimonio += '<p>'+value.fecha+'</p>';
-//             testimonio += '<p>'+value.texto+'</p>';
-//             testimonio += '</div>';
-//         });
-//         testimonio += '</div>';
-//         $('#testimonios').html(testimonio);
-//         }
-//     });
-// });
-
 
                                         //------------------------//
-                                        //       Ejercicio 4      //
+                                        // Ejercicios 3,4,5,6,9   //  TODO en el 9 hacer la animación
                                         //------------------------//
 
-$(document).ready(function(){
-    $.ajax({
-        url: "testimonios.json",
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-          // Obtén una lista de índices aleatorios para los testimonios
-          var indices = [];
-          var testimonio = '';
-          while (indices.length < 3) {
-            var index = Math.floor(Math.random() * data.length);
-            if (!indices.includes(index)) {
-              indices.push(index);
-            }
-          }
-
-          var randomTestimonios = [];
-          var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
-
-          for (var i = 0; i < indices.length; i++) {
-            randomTestimonios.push(data[indices[i]]);
-            testimonio += '<div class="testimonio_rand" style="display:flex;align-items:center; max-width:30%; flex-direction:column; margin:10px">';
-            testimonio += '<h2>' + randomTestimonios[i]['nombre'] + '</h2>';
-            testimonio += '<p>'+randomTestimonios[i]['fecha']+'</p>';
-            testimonio += '<p>'+randomTestimonios[i]['texto']+'</p>';
-            testimonio += '</div>';
-
-          }
-          testimonio += '</div>'
-          $("#testimonios_rand").html(testimonio);
-        },
-        error: function(error) {
-          console.log(error);
-        }
-      });
-      
-});
-                                        
-
-                                        //------------------------//
-                                        //       Ejercicio 5      //
-                                        //------------------------//
 var datos;
 
 function intervalo(){
 $.getJSON("testimonios.json", function(data) {
-    // selecciona tres elementos aleatorios
+
+    // selecciona tres elementos aleatorios de mi archivo testimonios.json
     var selectedData = [];
     for (var i = 0; i < 3; i++) {
         var randomIndex = Math.floor(Math.random() * data.length);
@@ -244,13 +178,15 @@ $.getJSON("testimonios.json", function(data) {
 
     });
 }
-    function showTable(data) {
+
+function showTable(data) {
+
     datos = data;
 
     var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
     testimonio += '<table class="testimonio_tabla"> <style>table{border: 1px black solid} th{border: 1px black solid} td{border: 1px black solid} tr{border: 1px black solid}</style>';
     testimonio += '<tr><th>Nombre</th><th>Fecha</th><th>Testimonio</th></tr>';
-    
+
     $.each(datos, function(key, value) {
         testimonio += '<tr>';
         testimonio += '<td>' + value.nombre + '</td>';
@@ -258,13 +194,15 @@ $.getJSON("testimonios.json", function(data) {
         testimonio += '<td>' + value.texto + '</td>';
         testimonio += '<tr>';
     });
-    
+
     testimonio += '</table>';
     $("#output").html(testimonio);
-    }
+}
     
-    function showDivs(datos) {
+function showDivs(datos) {
+
     var testimonio = '<div style=" display:flex; width:100%; justify-content:space-between;">';
+    
     $.each(datos, function(key, value) {
         testimonio += '<div class="testimonio" style="display:flex;align-items:center; flex-direction:column; margin:10px">';
         testimonio += '<h2>'+value.nombre+'</h2>';
@@ -272,25 +210,29 @@ $.getJSON("testimonios.json", function(data) {
         testimonio += '<p>'+value.texto+'</p>';
         testimonio += '</div>';
     });
-    testimonio += '</div>';
+
+testimonio += '</div>';
     $("#output").html(testimonio);
-    }
+}
 
-    $("#btn-table").click(function() {
+$("#btn-table").click(function() {
     showTable(datos);
-    });
-    
-    $("#btn-divs").click(function() {
-    showDivs(datos);
-    });
+});
 
-    intervalo();
-    setInterval(intervalo, 10000);
+$("#btn-divs").click(function() {
+    showDivs(datos);
+});
+
+intervalo();
+setInterval(intervalo, 10000);
+
+    
 
 
                                         //------------------------//
                                         //       Ejercicio 7      //
                                         //------------------------//
+
 $(document).ready(function(){
     $("#top-btn").click(function(){
         $("html, body").animate({scrollTop: 0}, "slow");
@@ -305,3 +247,8 @@ $(window).scroll(function(){
       $('#top-btn').fadeOut();
     }
   });
+
+                                        //------------------------//
+                                        //       Ejercicio 8      //
+                                        //------------------------//
+
