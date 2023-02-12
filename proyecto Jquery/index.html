@@ -4,19 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Jquery Project</title>
 </head>
 <body>
-    <style>
-
-body {
-  background: radial-gradient( #6dedc7, #2193b0);
-}
-
-    </style>
 
     <fieldset>
-        <legend id="ej1" style="font-size: 30px; font-weight: 800;">Validación de formulario con JQUERY</legend>
+        <legend class="titulo">Validación de formulario con JQUERY (1)</legend>
             
             <form>
                 <label for="nombre" class="nombre">Nombre: </label><input type="text" name="nombre" id="nombre" class="nombre"><br>
@@ -29,42 +23,23 @@ body {
     </fieldset><br>
 
     <fieldset>
-        <legend id="ej2" style="font-size: 30px; font-weight: 800;"> Archivo "Productos.json" mediante Jquery</legend>
+        <legend class="titulo"> Archivo "Productos.json" mediante Jquery (2)</legend>
         <div id="productos"></div>
     </fieldset> <br>
 
-    <fieldset>
-        <legend id="ej3" style="font-size: 30px; font-weight: 800;">Testimonios Json</legend>
-        <div id="testimonios"></div>
-    </fieldset><br>
 
     <fieldset>
-        <legend id="ej4" style="font-size: 30px; font-weight: 800;">Testimonios aleatorios Json</legend>
-        <div id="testimonios_rand"></div>
-    </fieldset><br>
-
-    <fieldset>
-        <legend id="ej5" style="font-size: 30px; font-weight: 800;">Vista tabla</legend>
+        <legend class="titulo">Vista tabla (3,4,5,6,8,9)</legend>
         <button id="btn-table">Ver en tabla</button>
         <button id="btn-divs">Ver en divs</button>
         <div id="output"></div>
     </fieldset><br>
 
     <fieldset>
-        <legend id="ej7" style="font-size: 30px; font-weight: 800;"> Boton scroll </legend>
-        <h2 style="display: flex; justify-content: center;">----------Implementado----------</h2>
+        <legend class="titulo"> Boton scroll (7)</legend>
+        <h2 id="implementado">----------Implementado----------</h2>
         <button id="top-btn">&uarr;</button>
-        <style>#top-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background-color: #333;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50%;
-            cursor: pointer;
-          }</style>
+        
     </fieldset>
 
 
