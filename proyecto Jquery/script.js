@@ -193,7 +193,7 @@ function mostrarTabla(data) {
     var testimonio = '<div>';
     testimonio += '<table>';
     testimonio += '<tr><th>Nombre</th><th>Fecha</th><th>Testimonio</th></tr>';
-    
+
     $.each(datos, function(key, value) {
         testimonio += '<tr>';
         testimonio += '<td>' + value.nombre + '</td>';
@@ -201,7 +201,7 @@ function mostrarTabla(data) {
         testimonio += '<td>' + value.texto + '</td>';
         testimonio += '<tr>';
     });
-    
+
     testimonio += '</table>';
     $("#output").fadeOut(500, function() {
     $(this).html(testimonio).fadeIn(500);
@@ -217,6 +217,7 @@ function mostrarDiv(datos) {
         testimonio += '<p>'+value.texto+'</p>';
         testimonio += '</div>';
     });
+
     testimonio += '</div>';
     $("#output").fadeOut(500, function() {
     $(this).html(testimonio).fadeIn(500);
@@ -231,16 +232,21 @@ $("#btn-divs").click(function() {
     mostrarDiv(datos);
     });
 
-    intervalo();
-    setInterval(intervalo, 10000);
+$("#btn-divs").click(function() {
+    showDivs(datos);
+});
+
+intervalo();
+setInterval(intervalo, 10000);
 
 
                                         //------------------------//
                                         //       Ejercicio 7      //
                                         //------------------------//
+
 $(document).ready(function(){
     $("#top-btn").click(function(){
-        $("html, body").animate({scrollTop: 0}, "slow");
+        $("html, body").animate({scrollTop: 0}, 1000);
         return false;
     });
 });
