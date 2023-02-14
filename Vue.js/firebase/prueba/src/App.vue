@@ -8,6 +8,8 @@ import TheWelcome from './components/TheWelcome.vue'
   <nav>
     <router-link to="/">HelloWorld</router-link> |
     <router-link to="/welcome/">Welcome</router-link> |
+    <router-link to="/registro/">Registro</router-link> |
+    <router-link to="/privado/">Privado</router-link> |
   </nav>
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
