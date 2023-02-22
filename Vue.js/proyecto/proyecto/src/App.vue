@@ -4,16 +4,19 @@
 </script>
 
 <template>
-  <nav>
-    <router-link to="/">INICIO</router-link> |
-    <router-link to="/about">BIENVENIDA</router-link> |
-    <router-link to="/register">REGISTER</router-link> |
-    <router-link to="/private">PRIVATE</router-link> |
+    <header>
+    <nav>
+      <router-link to="/">INICIO</router-link> |
+      <router-link to="/ofimatica">Ofimática</router-link> |
+      <router-link to="/programacion">Programación</router-link> |
+      <router-link to="/sos">SOs</router-link> |
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/private">PRIVATE</router-link> |
 
-  </nav>
-  <header>
+    </nav>
 
-    <h1>Mi proyecto de autentificación</h1>
+
+    
   </header>
 
   <main>
