@@ -11,7 +11,7 @@
       <router-link to="/programacion">Programación</router-link> |
       <router-link to="/sos">SOs</router-link> |
       <router-link to="/login">Login</router-link> |
-      <router-link to="/private">PRIVATE</router-link> |
+      <router-link to="/private">Administracion</router-link> |
 
     </nav>
 
