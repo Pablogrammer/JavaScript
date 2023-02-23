@@ -1,13 +1,21 @@
 <script setup>
+import { doc, onSnapshot, collection } from "firebase/firestore";
+import {db} from "@/firebase";
 
+let cursos = [];
+const unsub = onSnapshot(collection(db, "cursos"), (docs) => {
+    docs.forEach((doc) => {
+    console.log(doc.id, "=> ", doc.data());
+    cursos.push([doc.data()]);
+    });
+    console.log(cursos);
+});
 
 </script>
 
 <template>
     <h1>Programación</h1>
-    <div id="loged">
-        <div v-if="type === 'A'"></div>
-    </div>
+
     <table>
         <tr>
             <th>Nombre</th>

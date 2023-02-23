@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 
 
 // Initialize Firebase Authentication and get a reference to the service
@@ -16,3 +17,8 @@ export const firebaseApp = initializeApp({
 export const auth = getAuth(firebaseApp);
 
 export const storage = getStorage(firebaseApp);
+
+export const db = getFirestore(firebaseApp);
+
+
+
