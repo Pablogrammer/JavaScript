@@ -3,6 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase";
 import { ref } from "vue";
+import { getStorage, ref as refStrg, uploadBytes } from "firebase/storage";
 
 let username = ref("");
 
@@ -24,6 +25,16 @@ let username = ref("");
             });
     }
 
+    let file = ref ("");
+    
+    function uploadFile(){
+        const storage = getStorage();
+        const storageRef = refStrg(storage, file.value.files[0].name);
+        uploadBytes(storageRef, file.value.files[0]).then((snapshot) => {
+            console.log('Uploaded a blob file');
+        });
+    }
+
 </script>
 
 
@@ -31,4 +42,5 @@ let username = ref("");
     <h1>Private Zone</h1>
     <h2>Hello {{ username }}</h2>
     <button @click="closeSession">Close Session</button>
+    <p><input type="file" name="file" id="file" ref="file" @change="uploadFile"></p>
 </template>

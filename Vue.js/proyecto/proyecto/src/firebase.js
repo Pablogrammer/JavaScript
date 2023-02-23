@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 
 // Initialize Firebase Authentication and get a reference to the service
@@ -11,6 +12,7 @@ export const firebaseApp = initializeApp({
     messagingSenderId: "469205544548",
     appId: "1:469205544548:web:b04efb28d8ad0bbd7e3971"
   });
-  
+
 export const auth = getAuth(firebaseApp);
 
+export const storage = getStorage(firebaseApp);
