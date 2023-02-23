@@ -64,6 +64,6 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-const app = createApp(App);
+var app = createApp(App);
 app.use(router);
 app.mount('#app');

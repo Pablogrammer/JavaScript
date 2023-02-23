@@ -1,23 +1,18 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
     <header>
-    <nav>
-      <router-link to="/">INICIO</router-link> |
-      <router-link to="/ofimatica">Ofimática</router-link> |
-      <router-link to="/programacion">Programación</router-link> |
-      <router-link to="/sos">SOs</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/private">Administracion</router-link> |
-
-    </nav>
-
-
-    
-  </header>
+      <nav>
+        <router-link to="/">INICIO</router-link> |
+        <router-link to="/ofimatica">Ofimática</router-link> |
+        <router-link to="/programacion">Programación</router-link> |
+        <router-link to="/sos">SOs</router-link> |
+        <router-link to="/login">Login</router-link> |
+        <router-link to="/private">Administracion</router-link> |
+      </nav>
+    </header>
 
   <main>
     <router-view></router-view>
