@@ -4,6 +4,7 @@ import { useFirestore,useCollection } from 'vuefire'
 import { onAuthStateChanged} from "firebase/auth";
 import {ref} from "vue";
 import {auth} from "../firebase.js"
+import { getStorage, ref as refStrg, uploadBytes } from "firebase/storage";
 
 let nombreUsuario=ref("");
 
@@ -26,7 +27,9 @@ if (user) {
     
     <tbody v-for="curso in cursos" :key="curso.nombre">
             <tr v-if="curso.categoria=='ofimatica'">
-                <td>{{ curso.nombre }}</td>
+                <td>
+                    <RouterLink v-bind:to="'/detallar/' + curso.id">{{ curso.nombre }}</RouterLink>
+                </td>
                 <td>{{ curso.horas }}</td>
                 <td><img v-bind:src="'../src/images/'+curso.imagen" v-bind:alt="''+curso.imagen" width="50"></td>
                 <td v-if="nombreUsuario!=''"><button>Incribirse</button></td>
