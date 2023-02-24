@@ -1,65 +1,41 @@
 <script setup>
-import { doc, onSnapshot, collection } from "firebase/firestore";
-import {db} from "@/firebase";
+import { collection } from "firebase/firestore";
+import { useFirestore,useCollection } from 'vuefire';
 
-let cursos = [];
-const unsub = onSnapshot(collection(db, "cursos"), (docs) => {
-    docs.forEach((doc) => {
-    console.log(doc.id, "=> ", doc.data());
-    cursos.push([doc.data()]);
-    });
-    console.log(cursos);
-});
+const db = useFirestore()
+const cursos = useCollection(collection(db, 'cursos'))
+
 
 </script>
 
 <template>
+
     <h1>Programación</h1>
+    <tr><th>Nombre</th><th>Horas</th><th>Imagen</th><th>Inscripcion</th></tr>
 
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Horas</th>
-            <th>imagen</th>
-            <th>Inscipción</th> 
-        </tr>
-        <tr>
-            <td>Python</td>
-            <td> 8:15-10:15 </td>
-            <td><img src="../images/python.png" alt="python.png" style="width: 50px;"></td>
-            <td><button>Inscripción</button></td>
-        </tr>
-        <tr>
-            <td>JavaScript</td>
-            <td> 12:00 - 14:00 </td>
-            <td><img src="../images/javascript.png" alt="javascript.png" style="width: 50px;"></td>
-            <td><button>Inscripción</button></td>
-        </tr>
-        <tr>
-            <td>Php</td>
-            <td> 16:00-18:00 </td>
-            <td><img src="../images/php.png" alt="php.png" style="width: 50px;"></td>
-            <td><button>Inscripción</button></td>
-        </tr>
-
-    </table>
+    <tbody v-for="curso in cursos" :key="curso.nombre">
+            <tr v-if="curso.categoria=='programacion'">
+                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.horas }}</td>
+                <td><img v-bind:src="'../src/images/'+curso.imagen" v-bind:alt="''+curso.imagen" width="50"></td>
+                <td><button>Incribirse</button></td>
+            </tr>
+        </tbody>
 </template>
 
 <style>
-table, td, tr, th{
+
+
+tbody, td, tr, th{
     padding: 10px;
     color: white;
-}
-
-table {
-  background-image: linear-gradient(to bottom, rgba(255, 0, 208, 0.719) 0%, rgba(0, 0, 255, 0.714) 100%); /* the gradient */
-  background-origin: border-box; /* set background to start from border-box */
-  border-spacing: 5px; /* space between each cell */
-  border: 5px solid white; /* optional */
-  
+    border: 2px white solid;
+    background-color: rgba(0, 255, 115, 0.101);
 }
 
 button{
     cursor: pointer;
 }
+
+
 </style>

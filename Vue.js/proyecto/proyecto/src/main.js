@@ -14,6 +14,7 @@ import { auth } from "@/firebase";
 
 import './assets/main.css';
 
+
 let authenticated = false;
 
 const routes = [
