@@ -15,9 +15,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <header>
       <cabecera></cabecera>
-    </header>
+    
 
   <main>
     <div v-if="loading" class="preload"></div>
@@ -29,15 +28,16 @@ onMounted(() => {
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
+
+header{
+    width: 100vw;
+    margin: 2rem;
+  }
 
 .logo {
   display: block;
   margin: 0 auto 2rem;
 }
-
 
 .preload {
   width: 60px;
@@ -66,10 +66,6 @@ header {
     margin: 0 2rem 0 0;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+
 }
 </style>

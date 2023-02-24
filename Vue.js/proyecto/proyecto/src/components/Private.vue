@@ -5,12 +5,14 @@ import { ref } from "vue";
 import { collection } from "firebase/firestore";
 import { useFirestore, useCollection } from 'vuefire';
 
+import programacion from "../components/Programacion.vue";
+import SOs from "../components/SOs.vue";
+import ofimatica from "../components/Ofimatica.vue";
+
+
+
 const db = useFirestore()
 const cursos = useCollection(collection(db, 'cursos'))
-
-
-
-console.log(cursos);    
 
 let username = ref("");
 
@@ -24,23 +26,17 @@ let username = ref("");
         } 
     });
 
-
-
-
 </script>
-
-
 
 <template>
     <h1>Administración</h1>
     <h2>Bienvenido {{ username }}</h2>
-    <tbody v-for="curso in cursos" :key="curso.nombre">
-            <tr>
-                <td>{{ curso.nombre }}</td>
-                <td>{{ curso.horas }}</td>
-                <td><img v-bind:src="'../src/images/'+curso.imagen" width="50"></td>
-            </tr>
-        </tbody>
+
+<programacion></programacion>
+
+<SOs></SOs>
+    
+<ofimatica></ofimatica>
 
 
 </template>

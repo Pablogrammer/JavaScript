@@ -1,20 +1,35 @@
 <script setup>
 import { collection } from "firebase/firestore";
 import { useFirestore,useCollection } from 'vuefire'
+import { onAuthStateChanged} from "firebase/auth";
+import {ref} from "vue";
+import {auth} from "../firebase.js"
+
+let nombreUsuario=ref("");
 
 const db = useFirestore()
 const cursos = useCollection(collection(db, 'cursos'))
+
+
+onAuthStateChanged(auth, (user) => {
+if (user) {
+    const uid = user.uid;
+    nombreUsuario.value=user.email;
+}
+});
 </script>
 <template>
-    <h1>SOs</h1>
-    <tr><th>Nombre</th><th>Horas</th><th>Imagen</th><th>Inscripcion</th></tr>
+    <h1>Sistemas Operativos</h1>
+    <table>
+    <tr><th>Nombre</th><th>Horas</th><th>Imagen</th><th v-if="nombreUsuario!=''">Inscripcion</th></tr>
 
     <tbody v-for="curso in cursos" :key="curso.nombre">
             <tr v-if="curso.categoria=='SOs'">
                 <td>{{ curso.nombre }}</td>
                 <td>{{ curso.horas }}</td>
                 <td><img v-bind:src="'../src/images/'+curso.imagen" v-bind:alt="''+curso.imagen" width="50"></td>
-                <td><button>Incribirse</button></td>
+                <td v-if="nombreUsuario!=''"><button>Incribirse</button></td>
             </tr>
         </tbody>
+    </table>
 </template>
