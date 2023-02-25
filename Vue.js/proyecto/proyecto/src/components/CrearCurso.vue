@@ -9,6 +9,7 @@
 
     let file = ref ("");
 
+    //Subir archivo
     function uploadFile(){
 
         const storage = getStorage();
@@ -18,6 +19,7 @@
         
     }
     
+    //Creación de nuevo curso
     function nuevoCurso(){
 
         let categoria=document.getElementById("categoria").value;
@@ -36,6 +38,7 @@
 
     }
 
+    //Tipos de datos para la base de datos
     defineProps({
         categoria: String,
         nombre: String,
@@ -45,6 +48,8 @@
 
 </script>
 <template>
+
+    <!-- Formulario de creación de nuevo curso -->
    <h3>Nuevo Curso: </h3><br>
 
 <label>Categoria: </label>

@@ -5,8 +5,9 @@ import Footer from "./components/Footer.vue";
 
 const loading = ref(true)
 
+//esta función se encarga de hacer el simbolo de carga de mi pagina
 onMounted(() => {
-  // Aquí obtén los datos
+  // Aquí obtengo los datos
   // Cuando se hayan obtenido, establece loading en false después de 2 segundos
   setTimeout(() => {
     loading.value = false
@@ -16,6 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <!-- importacion de la cabecera -->
       <cabecera></cabecera>
 
   <main>
@@ -23,6 +25,7 @@ onMounted(() => {
     <div v-else> <router-view></router-view> </div>
   </main>
 
+  <!-- importacion de el footer -->
     <footer><Footer></Footer></footer>
 
 </template>
@@ -39,6 +42,7 @@ header{
   margin: 0 auto 2rem;
 }
 
+/* este es el css necesario para el simbolo de carga de la pagina */
 .preload {
   width: 60px;
   height: 60px;

@@ -14,10 +14,13 @@ export const firebaseApp = initializeApp({
     appId: "1:469205544548:web:b04efb28d8ad0bbd7e3971"
   });
 
+  //constante auth
 export const auth = getAuth(firebaseApp);
 
+  //constante storage
 export const storage = getStorage(firebaseApp);
 
+  //constante db
 export const db = getFirestore(firebaseApp);
 
 

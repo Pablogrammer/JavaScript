@@ -7,6 +7,7 @@
     let username = ref(""), password=ref("");
     const provider = new GoogleAuthProvider();
 
+    // Función de registro
     function registration(){
     createUserWithEmailAndPassword(auth, username.value, password.value)
         .then((userCredential) => {
@@ -22,6 +23,7 @@
 
     }
 
+  // Función de login normal con email y contraseña
     function login(){
         signInWithEmailAndPassword(auth, username.value, password.value)
   .then((userCredential) => {
@@ -35,6 +37,7 @@
   });
     }
 
+    // Función de login con google
     function loginGoogle(){
         signInWithPopup(auth, provider)
   .then((result) => {
@@ -62,6 +65,7 @@
 </script>
 
 <template>
+  <!-- Formulario de registro e inicio de sesión -->
     <label>Username: </label> <input type="text" v-model="username"/><br>
     <label>Password: </label> <input type="password" v-model="password"/><br>
     <button @click="registration">Register</button>

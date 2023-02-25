@@ -5,6 +5,7 @@ import {auth} from "../firebase.js"
 
 let nombreUsuario=ref("");
 
+//Detecta un inicio de sesión
 onAuthStateChanged(auth, (user) => {
 if (user) {
     const uid = user.uid;
@@ -12,6 +13,7 @@ if (user) {
 }
 });
 
+//Cierra la sesión activa
 function cerrarSesion(){
     signOut(auth).then(() => {
         nombreUsuario='';
@@ -19,9 +21,12 @@ function cerrarSesion(){
     }).catch((error) => {
     // An error happened.
     });
-}</script>
+}
+
+</script>
 
 <template>
+    <!-- Header -->
     <header>
         <nav>
             <router-link to="/">Inicio</router-link> 

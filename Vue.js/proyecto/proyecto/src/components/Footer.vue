@@ -1,5 +1,6 @@
 <script source></script>
 <template>
+    <!-- Footer -->
     <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
     <p>&copy; Pablo Cid Olmos</p>&nbsp;&nbsp;&nbsp;&nbsp;
     <a  href="https://github.com/Pablogrammer">

@@ -10,6 +10,7 @@ let nombreUsuario=ref("");
 const db = useFirestore()
 const cursos = useCollection(collection(db, 'cursos'))
 
+// Esta función detecta que un usuario se haya registrado y guarda el correo
 onAuthStateChanged(auth, (user) => {
 if (user) {
     const uid = user.uid;
@@ -18,6 +19,7 @@ if (user) {
 }
 });
 
+// Borra el curso seleccionado a partir de su id
 function borrarCurso(id){
     deleteDoc(doc((db), 'cursos', id));
 }
@@ -25,6 +27,8 @@ function borrarCurso(id){
 </script>
 
 <template>
+
+    <!-- Tabla de todos los cursos de programación -->
 
     <h1>Programación</h1>
 <table>

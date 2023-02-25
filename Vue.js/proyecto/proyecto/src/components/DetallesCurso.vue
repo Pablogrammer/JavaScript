@@ -7,6 +7,7 @@ const cursos = useCollection(collection(db, 'cursos'));
 
 var descr= 'Descripcion: En este curso de ';
 
+//Generación de pdf mediante jspdf
 function genPdf(nombre, horas, img, descr){
     let doc = new jsPDF();
     let logo = new Image();
@@ -22,9 +23,7 @@ function genPdf(nombre, horas, img, descr){
 </script>
 
 <template>
-    
-
-
+    <!-- Descripción de el curso -->
         <div v-for="curso in cursos" :key="curso.nombre">
             <p v-if="curso.id == $route.params.id">
                 <h1>Nombre del curso: {{ curso.nombre }}</h1><br><br>

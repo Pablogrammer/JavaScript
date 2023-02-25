@@ -16,6 +16,7 @@ const cursos = useCollection(collection(db, 'cursos'))
 
 let username = ref("");
 
+//Detecta un inicio de sesión
     onAuthStateChanged(auth, (user) => {
         if (user) {
         // User is signed in, see docs for a list of available properties
@@ -29,11 +30,14 @@ let username = ref("");
 </script>
 
 <template>
+    <!-- Pagina de administración -->
     <h1>Administración</h1>
     <h2>Bienvenido {{ username }}</h2>
     
+    <!-- Link de crear nuevo curso -->
     <h1><RouterLink v-bind:to="'/CrearCurso/'"> Crear Curso Nuevo</RouterLink></h1>
     
+    <!-- Contenido de todos los componentes -->
     <programacion></programacion>
 
     <SOs></SOs>

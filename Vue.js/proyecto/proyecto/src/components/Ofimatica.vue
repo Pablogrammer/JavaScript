@@ -11,7 +11,7 @@ let nombreUsuario=ref("");
 const db = useFirestore()
 const cursos = useCollection(collection(db, 'cursos'))
 
-
+// Esta función detecta que un usuario se haya registrado y guarda el correo
 onAuthStateChanged(auth, (user) => {
 if (user) {
     const uid = user.uid;
@@ -19,12 +19,15 @@ if (user) {
 }
 });
 
+// Borra el curso seleccionado a partir de su id
 function borrarCurso(id){
     deleteDoc(doc((db), 'cursos', id));
 }
 
 </script>
 <template>
+
+    <!-- Tabla de todos los cursos de Ofimatica -->
     <h1>Ofimática</h1>
     <table>
     <tr><th>Nombre</th><th>Horas</th><th>Imagen</th><th v-if="nombreUsuario!=''">Inscripcion</th><th v-if="nombreUsuario=='admin@admin.es'">Acciones</th></tr>
