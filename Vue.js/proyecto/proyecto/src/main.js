@@ -8,6 +8,7 @@ import SOs from "@/components/SOs.vue";
 import Login from "@/components/Login.vue";
 import Private from "@/components/Private.vue";
 import DetallesCurso from "@/components/DetallesCurso.vue";
+import CrearCurso from "@/components/CrearCurso.vue";
 
 import { createRouter, createWebHistory } from 'vue-router';
 import { onAuthStateChanged } from "firebase/auth";
@@ -51,6 +52,10 @@ const routes = [
 {
     path:'/detallar/:id',
     component: DetallesCurso
+},
+{
+    path: '/CrearCurso/',
+    component: CrearCurso
 }
 ];
 

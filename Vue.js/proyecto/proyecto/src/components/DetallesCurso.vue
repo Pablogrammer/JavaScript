@@ -23,16 +23,16 @@ function genPdf(nombre, horas, img, descr){
 
 <template>
     
-    <h1>Ofimática</h1>
+
 
         <div v-for="curso in cursos" :key="curso.nombre">
             <p v-if="curso.id == $route.params.id">
-                <span>Nombre del curso: {{ curso.nombre }}</span><br><br>
-                <span>Horas del curso: {{ curso.horas }}</span><br><br>
-                <span><img v-bind:src="'/src/images/' + curso.imagen" width="50"></span><br><br>
-                <span>Descripcion: En este curso de {{ curso.nombre }} aprenderás lo básico sobre {{ curso.categoria }}. Y con solo {{ curso.horas }} horas de curso te convertirás en todo un experto</span><br><br>
+                <h1>Nombre del curso: {{ curso.nombre }}</h1><br><br>
+                <h2>Horas del curso: {{ curso.horas }}</h2><br><br>
+                <span><img v-bind:src="'/src/images/' + curso.imagen" width="150"></span><br><br>
+                <h2>Descripcion: En este curso de {{ curso.nombre }} aprenderás lo básico sobre {{ curso.categoria }}. Y con solo {{ curso.horas }} horas de curso te convertirás en todo un experto</h2><br><br>
                 <span v-if="username!=''"><button>Incribirse</button></span>
-                <span><router-link v-bind:to="'/' + curso.categoria">Volver</router-link></span>
+                <span><h1><router-link v-bind:to="'/' + curso.categoria">Volver</router-link></h1></span>
                 <span><button @click="genPdf(curso.nombre, curso.horas, curso.imagen, descr+=curso.nombre+' aprenderás lo básico sobre\n '+curso.categoria+'. Y con solo '+curso.horas+' horas de curso te convertirás en todo un experto')">Generar Pdf</button></span>
             </p>
         </div>

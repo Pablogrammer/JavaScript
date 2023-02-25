@@ -28,7 +28,7 @@ function cerrarSesion(){
             <router-link to="/ofimatica">Ofimatica</router-link> 
             <router-link to="/programacion">Programación</router-link> 
             <router-link to="/SOs">SOs</router-link> 
-            <router-link v-if="nombreUsuario!=''" to="/private">  Administración</router-link> 
+            <router-link v-if="nombreUsuario=='admin@admin.es'" to="/private">  Administración</router-link> 
             <router-link v-if="nombreUsuario==''" to="/login">Login</router-link> 
             <button @click="cerrarSesion" v-else="nombreUsuario!=''" to="/inicio">Cerrar sesion</button> 
         </nav>

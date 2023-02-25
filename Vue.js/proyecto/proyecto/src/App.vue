@@ -11,12 +11,12 @@ onMounted(() => {
   setTimeout(() => {
     loading.value = false
   }, 2000)
-})
+});
+
 </script>
 
 <template>
       <cabecera></cabecera>
-    
 
   <main>
     <div v-if="loading" class="preload"></div>

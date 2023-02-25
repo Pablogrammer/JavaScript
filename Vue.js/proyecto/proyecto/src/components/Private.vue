@@ -31,12 +31,14 @@ let username = ref("");
 <template>
     <h1>Administración</h1>
     <h2>Bienvenido {{ username }}</h2>
-
-<programacion></programacion>
-
-<SOs></SOs>
     
-<ofimatica></ofimatica>
+    <h1><RouterLink v-bind:to="'/CrearCurso/'"> Crear Curso Nuevo</RouterLink></h1>
+    
+    <programacion></programacion>
+
+    <SOs></SOs>
+    
+    <ofimatica></ofimatica>
 
 
 </template>
