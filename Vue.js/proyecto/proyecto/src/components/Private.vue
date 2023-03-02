@@ -9,6 +9,8 @@ import programacion from "../components/Programacion.vue";
 import SOs from "../components/SOs.vue";
 import ofimatica from "../components/Ofimatica.vue";
 
+import { getStorage, ref as refStrg, uploadBytes } from "firebase/storage";
+
 
 
 const db = useFirestore()
@@ -27,12 +29,30 @@ let username = ref("");
         } 
     });
 
+let file = ref ("");
+    
+    function uploadFile(){
+        const storage = getStorage();
+        const storageRef = refStrg(storage, file.value.files[0].name);
+        uploadBytes(storageRef, file.value.files[0]).then((snapshot) => {
+            console.log('Uploaded a blob file');
+        });
+    }
+
 </script>
 
 <template>
     <!-- Pagina de administración -->
     <h1>Administración</h1>
     <h2>Bienvenido {{ username }}</h2>
+<<<<<<< Updated upstream
+=======
+    <p><input type="file" name="file" id="file" ref="file" @change="uploadFile"></p>
+
+<programacion></programacion>
+
+<SOs></SOs>
+>>>>>>> Stashed changes
     
     <!-- Link de crear nuevo curso -->
     <h1><RouterLink v-bind:to="'/CrearCurso/'"> Crear Curso Nuevo</RouterLink></h1>
@@ -43,6 +63,8 @@ let username = ref("");
     <SOs></SOs>
     
     <ofimatica></ofimatica>
+
+
 
 
 </template>
